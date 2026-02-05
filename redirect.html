@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Learniey…</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./adaptive-icon.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+        <a href="/" class="logo">
+            <span>Learniey</span>
+            <div class="logo-underline"></div>
+        </a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/help">Help & Support</a></li>
+            <!-- <li><a href="/#download" class="btn-download">Download App</a></li> -->
+        </ul>
+        </div>
+    </nav>
+
+    <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <div style=" border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 3rem 2rem; max-width: 500px; width: 100%; text-align: center;">
+            <h3 id="status">Opening Learniey…</h3>
+            <p>If nothing happens, make sure the app is installed.</p>
+
+            <div id="fallback" style="display:none;margin-top:28px;">
+                <a href="/#download" class="btn-primary">Download App</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+            <h3>Learniey</h3>
+            <p>A smart learning hub designed to help students stay organized, connected, and focused on their academic success.</p>
+            </div>
+            <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/help">Help & Support</a></li>
+                <li><a href="/#download">Download App</a></li>
+            </ul>
+            </div>
+            <div class="footer-section">
+            <h3>Support</h3>
+            <ul class="footer-links">
+                <li><a href="/help">Help Center</a></li>
+                <li><a href="/forgot-password">Forgot Password</a></li>
+                <li><a href="/verify-email">Verify Email</a></li>
+            </ul>
+            </div>
+            <div class="footer-section">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+                <li><a href="/terms">Terms & Conditions</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Learniey. All rights reserved.</p>
+        </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+
+        const type = params.get("type"); 
+        const id = params.get("id");
+
+        const statusEl = document.getElementById("status");
+        const fallbackEl = document.getElementById("fallback");
+
+        if (!type || !id) {
+            statusEl.innerText = "Invalid or incomplete link.";
+            return;
+        }
+
+        const allowedTypes = [
+            "announcement",
+            "file",
+            "document",
+            "recording",
+            "timetable",
+            "note"
+        ];
+
+        if (!allowedTypes.includes(type)) {
+            statusEl.innerText = "Unsupported content type.";
+            return;
+        }
+
+        const path = `${type}/${id}`;
+
+        const androidIntent =
+            `intent://${path}` +
+            `#Intent;scheme=learniey;package=com.learniey.learniey;end;`;
+
+        const customScheme = `learniey://${path}`;
+
+        const isAndroid = /Android/i.test(navigator.userAgent);
+
+        statusEl.innerText = `Opening ${type}…`;
+
+        if (isAndroid) {
+            window.location.href = androidIntent;
+        } else {
+            window.location.href = customScheme;
+        }
+
+        setTimeout(() => {
+            fallbackEl.style.display = "block";
+        }, 1500);
+        });
+  </script>
+</body>
+</html>

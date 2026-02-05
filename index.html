@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learniey - A smart learning hub for students. Access class announcements, timetables, notes, and recorded classes all in one place.">
+  <title>Learniey - A Smart Learning Hub for Students</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="./adaptive-icon.png" type="image/x-icon">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span>Learniey</span>
+        <div class="logo-underline"></div>
+      </a>
+      
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/help">Help & Support</a></li>
+        <!-- <li><a href="/#download" class="btn-download">Download App</a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">New Mobile App</span>
+      <h1>A Smart Learning App for <span class="highlight">Students</span></h1>
+      <p>Access class announcements, timetables, notes, and recorded classes all in one place. Join your class and stay connected with your learning community.</p>
+      <div class="cta-buttons">
+        <a href="/#download" class="btn-primary">Download App</a>
+        <a href="/#features" class="btn-secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="./user.png" style="width: 90%"/>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="section-header">
+      <h2>Our Features</h2>
+      <p>Learniey brings together all your learning resources in one powerful app designed for students</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+                  <i class="fa-solid fa-bullhorn"></i>
+
+        </div>
+        <h3>Daily Announcements</h3>
+        <p>Stay updated with important class announcements and notifications from your class representative in real-time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <h3>Class Timetables</h3>
+        <p>Access your complete class schedule at a glance. Never miss a class with organized timetables.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <h3>Study Materials</h3>
+        <p>Download PDFs of notes and exam papers anytime, anywhere. Keep all your study materials in one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-video"></i>
+        </div>
+        <h3>Recorded Classes</h3>
+        <p>Access audio and video recordings of your classes. Review lectures at your own pace whenever you need.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3>Class Management</h3>
+        <p>Join classes managed by your class representative. Connect with classmates and collaborate easily.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>Secure & Private</h3>
+        <p>Your data is protected with industry-standard security. Focus on learning with peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="section" id="download">
+    <div class="download-section">
+      <h2>Download Learniey Today</h2>
+      <p>Start your smarter learning journey. Available on Android devices.</p>
+       <a
+      href="https://play.google.com/store/apps/details?id=com.learniey.learniey"
+      class="playstore-badge"
+      aria-label="Get Learniey on Google Play"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="./playstore.png"
+        alt="Get it on Google Play"
+      />
+    </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Learniey</h3>
+          <p>A smart learning app designed to help students stay organized, connected, and focused on their academic success.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/help">Help & Support</a></li>
+            <li><a href="/#download">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="/help">Help Center</a></li>
+            <li><a href="/forgot-password">Forgot Password</a></li>
+            <li><a href="/verify-email">Verify Email</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Learniey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navLinks = document.getElementById('navLinks');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navbar = document.querySelector('.navbar');
+      
+      if (!navbar.contains(event.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
