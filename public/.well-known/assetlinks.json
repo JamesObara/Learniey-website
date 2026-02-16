@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.learniey.learniey",
+      "sha256_cert_fingerprints": [
+        "7C:14:C6:C8:51:22:4B:92:7F:EC:8A:41:E3:1F:59:68:4F:84:45:AB:A1:12:85:C9:7E:B9:6E:CF:A7:78:BF:B7"
+      ]
+    }
+  }
+]
