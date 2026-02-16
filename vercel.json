@@ -1,0 +1,23 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/forgot-password", "destination": "/forgot-password.html" },
+    { "source": "/help", "destination": "/help.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/redirect", "destination": "/redirect.html" },
+    { "source": "/reset-password", "destination": "/reset-password.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/verify-email", "destination": "/verify-email.html" },
+    { "source": "/verify-useremail", "destination": "/verify-useremail.html" }
+  ],
+  "redirects": [
+    { "source": "/forgot-password.html", "destination": "/forgot-password", "permanent": true },
+    { "source": "/help.html", "destination": "/help", "permanent": true },
+    { "source": "/privacy.html", "destination": "/privacy", "permanent": true },
+    { "source": "/redirect.html", "destination": "/redirect", "permanent": true },
+    { "source": "/reset-password.html", "destination": "/reset-password", "permanent": true },
+    { "source": "/terms.html", "destination": "/terms", "permanent": true },
+    { "source": "/verify-email.html", "destination": "/verify-email", "permanent": true },
+    { "source": "/verify-useremail.html", "destination": "/verify-useremail", "permanent": true }
+  ]
+}
