@@ -82,55 +82,34 @@
     
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-        const params = new URLSearchParams(window.location.search);
+            const statusEl = document.getElementById("status");
+            const fallbackEl = document.getElementById("fallback");
 
-        const type = params.get("type"); 
-        const id = params.get("id");
+            const parts = window.location.pathname.split("/").filter(Boolean);
+            const type = parts[0];
+            const id = parts[1];
 
-        const statusEl = document.getElementById("status");
-        const fallbackEl = document.getElementById("fallback");
+            const allowedTypes = ["announcement", "file", "document", "recording", "timetable", "note"];
 
-        if (!type || !id) {
-            statusEl.innerText = "Invalid or incomplete link.";
-            return;
-        }
+            if (!type || !id || !allowedTypes.includes(type)) {
+                statusEl.innerText = "Invalid or unsupported link.";
+                return;
+            }
 
-        const allowedTypes = [
-            "announcement",
-            "file",
-            "document",
-            "recording",
-            "timetable",
-            "note"
-        ];
+            const path = `${type}/${id}`;
+            const androidIntent = `intent://${path}#Intent;scheme=learniey;package=com.learniey.learniey;end;`;
+            const customScheme = `learniey://${path}`;
+            const isAndroid = /Android/i.test(navigator.userAgent);
 
-        if (!allowedTypes.includes(type)) {
-            statusEl.innerText = "Unsupported content type.";
-            return;
-        }
+            statusEl.innerText = `Opening ${type}…`;
 
-        const path = `${type}/${id}`;
+            window.location.href = isAndroid ? androidIntent : customScheme;
 
-        const androidIntent =
-            `intent://${path}` +
-            `#Intent;scheme=learniey;package=com.learniey.learniey;end;`;
-
-        const customScheme = `learniey://${path}`;
-
-        const isAndroid = /Android/i.test(navigator.userAgent);
-
-        statusEl.innerText = `Opening ${type}…`;
-
-        if (isAndroid) {
-            window.location.href = androidIntent;
-        } else {
-            window.location.href = customScheme;
-        }
-
-        setTimeout(() => {
-            fallbackEl.style.display = "block";
-        }, 1500);
+            setTimeout(() => {
+                fallbackEl.style.display = "block";
+            }, 1500);
         });
+       
   </script>
 </body>
 </html>

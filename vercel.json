@@ -8,7 +8,14 @@
     { "source": "/reset-password", "destination": "/reset-password.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/verify-email", "destination": "/verify-email.html" },
-    { "source": "/verify-useremail", "destination": "/verify-useremail.html" }
+    { "source": "/verify-useremail", "destination": "/verify-useremail.html" },
+
+    { "source": "/announcement/:id", "destination": "/redirect.html" },
+    { "source": "/file/:id", "destination": "/redirect.html" },
+    { "source": "/document/:id", "destination": "/redirect.html" },
+    { "source": "/recording/:id", "destination": "/redirect.html" },
+    { "source": "/timetable/:id", "destination": "/redirect.html" },
+    { "source": "/note/:id", "destination": "/redirect.html" }
   ],
   "redirects": [
     { "source": "/forgot-password.html", "destination": "/forgot-password", "permanent": true },
