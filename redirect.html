@@ -81,7 +81,7 @@
     </footer>
     
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+         document.addEventListener("DOMContentLoaded", () => {
             const statusEl = document.getElementById("status");
             const fallbackEl = document.getElementById("fallback");
 
@@ -96,18 +96,20 @@
                 return;
             }
 
-            const path = `${type}/${id}`;
-            const androidIntent = `intent://${path}#Intent;scheme=learniey;package=com.learniey.learniey;end;`;
-            const customScheme = `learniey://${path}`;
-            const isAndroid = /Android/i.test(navigator.userAgent);
-
             statusEl.innerText = `Opening ${type}…`;
 
-            window.location.href = isAndroid ? androidIntent : customScheme;
+            const isAndroid = /Android/i.test(navigator.userAgent);
+
+            if (isAndroid) {
+                const intentUrl = `intent://learniey.uniconnect.store/${type}/${id}#Intent;scheme=https;package=com.learniey.learniey;S.browser_fallback_url=https://learniey.uniconnect.store/${type}/${id};end`;
+                window.location.href = intentUrl;
+            } else {
+                window.location.href = `learniey://${type}/${id}`;
+            }
 
             setTimeout(() => {
                 fallbackEl.style.display = "block";
-            }, 1500);
+            }, 2500);
         });
        
   </script>
