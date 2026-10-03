@@ -9,7 +9,7 @@
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/verify-email", "destination": "/verify-email.html" },
     { "source": "/verify-useremail", "destination": "/verify-useremail.html" },
-
+    { "source": "/advertise", "destination": "/advertise.html" },
     { "source": "/announcement/:id", "destination": "/redirect.html" },
     { "source": "/file/:id", "destination": "/redirect.html" },
     { "source": "/document/:id", "destination": "/redirect.html" },
@@ -25,6 +25,7 @@
     { "source": "/reset-password.html", "destination": "/reset-password", "permanent": true },
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
     { "source": "/verify-email.html", "destination": "/verify-email", "permanent": true },
-    { "source": "/verify-useremail.html", "destination": "/verify-useremail", "permanent": true }
+    { "source": "/verify-useremail.html", "destination": "/verify-useremail", "permanent": true },
+    { "source": "/advertise.html", "destination": "/advertise", "permanent": true }
   ]
 }

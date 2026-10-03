@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advertise your business to students on Learniey. See estimated reach and cost, then contact us on WhatsApp.">
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Learniey, advertise to students Kenya, advertise with Learniey, campus advertising Kenya, student marketing Kenya" />
+  <title>Advertise With Us - Reach Students in Kenya | Learniey</title>
+  <meta name="author" content="Learniey" />
+  <meta property="og:title" content="Advertise With Learniey" />
+  <meta property="og:description" content="Reach students where they study. Estimate your reach and cost in seconds." />
+  <meta property="og:url" content="https://learniey.online/advertise" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://learniey.online/og-image.png" />
+  <link rel="canonical" href="https://learniey.online/advertise" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="./adaptive-icon.png" type="image/x-icon">
+  <style>
+    :root { --adv-accent: #130457; --adv-track: #e5e7eb; }
+    .adv-wrap { max-width: 880px; margin: 0 auto; }
+    .adv-hero { padding: 72px 20px 24px; text-align: center; }
+    .adv-hero h1 { margin: 12px 0; }
+    .adv-hero p { max-width: 620px; margin: 0 auto; }
+    .calc { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; }
+    .calc-group { margin-bottom: 26px; }
+    .calc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px; font-weight: 600; }
+    .calc-row output { color: var(--adv-accent); font-weight: 700; }
+    .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+    .option { border: 2px solid #e5e7eb; border-radius: 12px; padding: 12px 14px; cursor: pointer; background: #fff; text-align: left; font: inherit; color: inherit; }
+    .option small { display: block; color: #6b7280; margin-top: 4px; font-weight: 400; }
+    .option[aria-pressed="true"] { border-color: var(--adv-accent); background: #f5f5ff; }
+    .option:focus-visible, input[type=range]:focus-visible, .contact-btn:focus-visible { outline: 3px solid var(--adv-accent); outline-offset: 2px; }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; border-radius: 999px;
+      background: linear-gradient(to right, var(--adv-accent) var(--fill, 0%), var(--adv-track) var(--fill, 0%)); }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 4px solid var(--adv-accent); cursor: pointer; }
+    input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 4px solid var(--adv-accent); cursor: pointer; }
+    .result { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
+    .result div { background: #f9fafb; border-radius: 12px; padding: 16px; }
+    .result span { display: block; color: #6b7280; font-size: 0.9rem; }
+    .result strong { display: block; font-size: 1.5rem; margin-top: 4px; }
+    .fine { color: #6b7280; font-size: 0.9rem; margin-top: 14px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .contact-btn.wa { background: #25d366; color: #073b1c; }
+    .contact-btn.call { background: #fff; color: inherit; border: 2px solid #d1d5db; }
+    @media (max-width: 520px) { .result { grid-template-columns: 1fr; } .calc { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="./" class="logo">
+        <span>Learniey</span>
+        <div class="logo-underline"></div>
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./advertise">Advertise With Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="adv-hero">
+    <div class="adv-wrap">
+      <span class="badge">For local businesses</span>
+      <h1>Put your business in front of <span class="highlight">students</span></h1>
+      <p>Learniey is where students check announcements, timetables, notes and recorded classes. Your ad sits right inside that daily routine. Choose a placement, set your reach and time, and see an estimate below.</p>
+    </div>
+  </section>
+
+  <!-- Estimator -->
+  <section class="section" id="estimate">
+    <div class="adv-wrap">
+      <div class="calc">
+        <div class="calc-group">
+          <div class="calc-row"><span>1. Choose a placement</span></div>
+          <div class="options" id="placements"></div>
+        </div>
+
+        <div class="calc-group">
+          <div class="calc-row"><label for="reach">2. Students you want to reach</label><output id="reachOut"></output></div>
+          <input type="range" id="reach" min="50" max="2000" step="50" value="300">
+        </div>
+
+        <div class="calc-group">
+          <div class="calc-row"><label for="weeks">3. How long it runs</label><output id="weeksOut"></output></div>
+          <input type="range" id="weeks" min="1" max="12" step="1" value="2">
+        </div>
+
+        <div class="result" aria-live="polite">
+          <div><span>Estimated ad views</span><strong id="views"></strong></div>
+          <div><span>Estimated cost</span><strong id="cost"></strong></div>
+        </div>
+        <p class="fine">These are estimates, not guarantees. Views depend on how often students open the app. We confirm the final price and send you a views report when your ad ends.</p>
+
+        <div class="contact">
+          <a class="contact-btn wa" id="waLink" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+          <a class="contact-btn call" id="callLink" href="#"><i class="fa-solid fa-phone"></i> Call us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="section-header">
+      <h2>How it works</h2>
+      <p>Simple for small businesses. No design skills or big budget needed.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <h3>Message us</h3>
+        <p>Send your business name, what you want to promote and your budget. We reply with a quote.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
+        <h3>Share your ad</h3>
+        <p>Send a logo, a photo or a short message. We help you shape it into a clear ad.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-chart-simple"></i></div>
+        <h3>See the results</h3>
+        <p>When your ad ends, we send you the number of views and which classes saw it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Learniey</h3>
+          <p>A smart learning app designed to help students stay organized, connected, and focused on their academic success.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./">Home</a></li>
+            <li><a href="./#features">Features</a></li>
+            <li><a href="./help">Help & Support</a></li>
+            <li><a href="./#download">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="./advertise">Advertise With Us</a></li>
+            <li><a href="./help">Help Center</a></li>
+            <li><a href="./forgot-password">Forgot Password</a></li>
+            <li><a href="./verify-email">Verify Email</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="./terms">Terms & Conditions</a></li>
+            <li><a href="./privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Learniey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const CONTACT = {
+      whatsapp: '254750932325',   
+      phone: '+254750932325'  
+    };
+
+    const PLACEMENTS = [
+      { id: 'card',   name: 'Sponsored card',     note: 'In the announcements feed', viewsPerStudentPerWeek: 6, cpm: 100, minPrice: 100 },
+      { id: 'banner', name: 'Banner',             note: 'On class and paper screens', viewsPerStudentPerWeek: 10, cpm: 100, minPrice: 100 },
+      { id: 'class',  name: 'Class sponsorship',  note: 'Your logo on a class page',  viewsPerStudentPerWeek: 8, cpm: 100, minPrice: 100 }
+    ];
+    const LOW = 0.7, HIGH = 1.3; 
+
+    const $ = id => document.getElementById(id);
+    const fmt = n => Math.round(n).toLocaleString('en-KE');
+    const round50 = n => Math.round(n / 10) * 10;
+    let current = PLACEMENTS[0];
+
+    function renderOptions() {
+      const box = $('placements');
+      box.innerHTML = '';
+      PLACEMENTS.forEach(p => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'option';
+        b.setAttribute('aria-pressed', p.id === current.id);
+        b.innerHTML = p.name + '<small>' + p.note + '</small>';
+        b.onclick = () => { current = p; renderOptions(); update(); };
+        box.appendChild(b);
+      });
+    }
+
+    function fill(el) {
+      el.style.setProperty('--fill', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
+    }
+
+    function update() {
+      const students = +$('reach').value, weeks = +$('weeks').value;
+      fill($('reach')); fill($('weeks'));
+      $('reachOut').textContent = fmt(students) + ' students';
+      $('weeksOut').textContent = weeks + (weeks === 1 ? ' week' : ' weeks');
+
+      const mid = students * current.viewsPerStudentPerWeek * weeks;
+      const vLow = mid * LOW, vHigh = mid * HIGH;
+      const price = v => Math.max(current.minPrice, round50(v / 1000 * current.cpm));
+      const cLow = price(vLow), cHigh = price(vHigh);
+
+      $('views').textContent = fmt(vLow) + ' to ' + fmt(vHigh);
+      $('cost').textContent = cLow === cHigh ? 'KSh ' + fmt(cLow) : 'KSh ' + fmt(cLow) + ' to ' + fmt(cHigh);
+
+      const msg = 'Hello Learniey, I want to advertise.\nPlacement: ' + current.name +
+        '\nReach: ' + fmt(students) + ' students\nDuration: ' + weeks + (weeks === 1 ? ' week' : ' weeks') +
+        '\nEstimate: ' + $('cost').textContent + '\nBusiness name: ';
+      $('waLink').href = 'https://wa.me/' + CONTACT.whatsapp + '?text=' + encodeURIComponent(msg);
+      $('callLink').href = 'tel:' + CONTACT.phone;
+    }
+
+    $('reach').addEventListener('input', update);
+    $('weeks').addEventListener('input', update);
+    renderOptions();
+    update();
+
+    function toggleMenu() { $('navLinks').classList.toggle('active'); }
+    document.addEventListener('click', function(e) {
+      if (!document.querySelector('.navbar').contains(e.target)) $('navLinks').classList.remove('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => $('navLinks').classList.remove('active')));
+  </script>
+</body>
+</html>
