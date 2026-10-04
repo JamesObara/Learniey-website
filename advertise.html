@@ -99,7 +99,7 @@
           <div><span>Estimated ad views</span><strong id="views"></strong></div>
           <div><span>Estimated cost</span><strong id="cost"></strong></div>
         </div>
-        <p class="fine">These are estimates, not guarantees. Views depend on how often students open the app. We confirm the final price and send you a views report when your ad ends.</p>
+        <p class="fine">These are estimates, not guarantees. A view is counted each time your ad is shown on a student's screen for at least one second. The same student seeing the same ad again within 30 seconds counts once. We count views, not taps. We confirm the final price and send you a views report when your ad ends.</p>
 
         <div class="contact">
           <a class="contact-btn wa" id="waLink" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -124,7 +124,7 @@
       <div class="feature-card">
         <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
         <h3>Share your ad</h3>
-        <p>Send a logo, a photo or a short message. We help you shape it into a clear ad.</p>
+        <p>Send a short message, a logo if you have one, and how students should reach you: call, WhatsApp, map location or website.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><i class="fa-solid fa-chart-simple"></i></div>
@@ -181,9 +181,8 @@
     };
 
     const PLACEMENTS = [
-      { id: 'card',   name: 'Sponsored card',     note: 'In the announcements feed', viewsPerStudentPerWeek: 6, cpm: 100, minPrice: 100 },
-      { id: 'banner', name: 'Banner',             note: 'On class and paper screens', viewsPerStudentPerWeek: 10, cpm: 100, minPrice: 100 },
-      { id: 'class',  name: 'Class sponsorship',  note: 'Your logo on a class page',  viewsPerStudentPerWeek: 8, cpm: 100, minPrice: 100 }
+      { id: 'banner', name: 'Sponsored Banner',   note: 'Small banner at the bottom of the app, with call, WhatsApp, map or website buttons', viewsPerStudentPerWeek: 10, cpm: 100, minPrice: 100 },
+      { id: 'class',  name: 'Class sponsorship',  note: 'Your name, logo and button in the class menu',  viewsPerStudentPerWeek: 8, cpm: 100, minPrice: 100 }
     ];
     const LOW = 0.7, HIGH = 1.3; 
 
